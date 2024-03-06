@@ -1,1 +1,7 @@
 node_modules
+data/tns/
+data/imgs/
+data/splitImgs/
+data/pdfs/SGT-29.pdf
+secureKeys
+.DS_Store

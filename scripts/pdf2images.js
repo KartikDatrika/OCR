@@ -8,7 +8,7 @@ var outputImages1 = pdf2img.convert(pdfPath);
 outputImages1.then(function (outputImages) {
   for (var i = 0; i < outputImages.length; i++)
     fs.writeFile(
-      "../data/imgs/pdf" + i + ".png",
+      "../data/imgs/pdf" + (i + 1) + ".png",
       outputImages[i],
       function (error) {
         if (error) {

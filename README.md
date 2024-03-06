@@ -8,11 +8,11 @@ cd scripts
 
 // for pdf to images
 
-node pdf2images.js // from pdf folder pdf is converted to images inside imgs
+node pdf2images.js // from pdf folder pdf is converted to images inside imgs -- 300 pages 30sec
 
 // for image split
 
-node img2halves.js // from imgs to splitImgs
+node img2halves.js // from imgs to splitImgs -- 300 imgs 15sec
 
 // to use google api place service account private key json inside secureKeys folder
 // adjust file name to annotate
