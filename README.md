@@ -1,8 +1,8 @@
 // git clone
 // have node >= 20
-//
+// follow below steps
 
-do yarn
+yarn
 
 cd scripts
 
