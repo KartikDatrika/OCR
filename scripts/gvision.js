@@ -3,6 +3,7 @@ import vision from "@google-cloud/vision";
 import {
   readFolder,
   convertToExcel,
+  writeFile,
   getFileNameWithoutExtension,
 } from "./helpers.js";
 
@@ -14,12 +15,14 @@ const client = new vision.ImageAnnotatorClient({
 async function quickstart(f, path) {
   const name = getFileNameWithoutExtension(path);
   const [result] = await client.documentTextDetection(path);
-  const fullTextAnnotation = result.fullTextAnnotation;
-  // console.log(fullTextAnnotation.text);
-  convertToExcel(fullTextAnnotation.text.split("\n"), "../data/tns/" + name);
+  // const fullTextAnnotation = result.fullTextAnnotation;
+  // console.log(
+  //   fullTextAnnotation.text === result.textAnnotations[0].description
+  // );
+  writeFile(JSON.stringify(result, null, 2), "../data/tns/" + name + ".json");
 }
 
-readFolder("../data/splitImgs", quickstart);
+readFolder("../data/imgs", quickstart);
 // quickstart("", "./right_half.jpg");
 // quickstart("", "../data/splitImgs/left_2.png");
 // convertToExcel();
